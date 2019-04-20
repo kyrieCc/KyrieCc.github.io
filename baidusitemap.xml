@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/linux_deeplearing_bulid/</loc>
+    <loc>http://yoursite.com/hexo-github-blog-building/</loc>
     <lastmod>2019-04-20</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/hexo-github-blog-building/</loc>
-    <lastmod>2016-05-23</lastmod>
+    <loc>http://yoursite.com/linux_deeplearing_bulid/</loc>
+    <lastmod>2019-04-20</lastmod>
   </url>
 </urlset>
