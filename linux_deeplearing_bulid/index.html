@@ -51,21 +51,21 @@
 
 
 
-<meta name="description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
+<meta name="description" content="title:’Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date:2019-04-20 21:09:16 tags:[Linux, Deep Learning]categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kyrie Cc">
 <meta property="og:url" content="http://yoursite.com/linux_deeplearing_bulid/index.html">
 <meta property="og:site_name" content="kyrie Cc">
-<meta property="og:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
+<meta property="og:description" content="title:’Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date:2019-04-20 21:09:16 tags:[Linux, Deep Learning]categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/图片1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/图片2.png">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1555753110558.png">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1555753213774.png">
-<meta property="og:updated_time" content="2019-04-20T13:04:55.157Z">
+<meta property="og:updated_time" content="2019-04-20T13:12:05.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kyrie Cc">
-<meta name="twitter:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
+<meta name="twitter:description" content="title:’Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date:2019-04-20 21:09:16 tags:[Linux, Deep Learning]categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除">
 <meta name="twitter:image" content="c:/Users/Administrator/Desktop/图片1.png">
 
 
@@ -272,7 +272,7 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2019-04-20T18:00:00+08:00" content="2019-04-20">
+            <time itemprop="dateCreated" datetime="2019-04-20T21:11:06+08:00" content="2019-04-20">
               2019-04-20
             </time>
           </span>
@@ -310,8 +310,9 @@
       
 
       
-        <span itemprop="articleBody"><p>title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’<br>date: 2019-04-20 20:15:01<br>tags: [Linux, Deep Learning]</p>
-<h2 id="categories-Linux"><a href="#categories-Linux" class="headerlink" title="categories:  Linux"></a>categories:  Linux</h2><p>全文分为三个部分：</p>
+        <span itemprop="articleBody"><hr>
+<p>title:’Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’<br>date:2019-04-20 21:09:16</p>
+<h2 id="tags-Linux-Deep-Learning"><a href="#tags-Linux-Deep-Learning" class="headerlink" title="tags:[Linux, Deep Learning]"></a>tags:[Linux, Deep Learning]</h2><h2 id="categories-Linux"><a href="#categories-Linux" class="headerlink" title="categories:  Linux"></a>categories:  Linux</h2><p>全文分为三个部分：</p>
 <ol>
 <li>安装显卡驱动</li>
 <li>安装cuda和cundnn</li>
@@ -385,11 +386,11 @@
 <p>对应网址：<a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
 </li>
 <li><p>解压</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cudnn<span class="number">-9.0</span>-linux-x64-v7<span class="number">.1</span>.tgz</span><br><span class="line">   </span><br><span class="line">   cp .<span class="meta-keyword">/cuda/</span>include/cudnn.h <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>include</span><br><span class="line">   </span><br><span class="line">   cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn.so<span class="number">.7</span><span class="number">.4</span><span class="number">.1</span> <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br><span class="line">   </span><br><span class="line">   cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn_static.a <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cudnn<span class="number">-9.0</span>-linux-x64-v7<span class="number">.1</span>.tgz</span><br><span class="line"></span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>include/cudnn.h <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>include</span><br><span class="line"></span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn.so<span class="number">.7</span><span class="number">.4</span><span class="number">.1</span> <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br><span class="line"></span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn_static.a <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br></pre></td></tr></table></figure>
+<p> 然后进入<code>cd /usr/local/cuda/lib64</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span><span class="selector-class">.4</span><span class="selector-class">.1</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span></span><br><span class="line">   </span><br><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<pre><code>然后进入`cd /usr/local/cuda/lib64`
-</code></pre>   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span><span class="selector-class">.4</span><span class="selector-class">.1</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span></span><br><span class="line">   </span><br><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span></span><br></pre></td></tr></table></figure>
 <p><strong>安装anaconda和tensorflow-gpu</strong></p>
 <ol>
 <li><p>安装Anaconda3</p>
@@ -416,20 +417,6 @@
     <footer class="post-footer">
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/hexo-github-blog-building/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
@@ -521,7 +508,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -585,7 +572,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Linux"><span class="nav-number">1.</span> <span class="nav-text">categories:  Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装显卡驱动"><span class="nav-number">2.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装cuda和cundnn"><span class="nav-number">3.</span> <span class="nav-text">安装cuda和cundnn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CUDA9-0安装"><span class="nav-number">3.1.</span> <span class="nav-text">CUDA9.0安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cudnn安装"><span class="nav-number">3.2.</span> <span class="nav-text">cudnn安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-Linux-Deep-Learning"><span class="nav-number">1.</span> <span class="nav-text">tags:[Linux, Deep Learning]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Linux"><span class="nav-number">2.</span> <span class="nav-text">categories:  Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装显卡驱动"><span class="nav-number">3.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装cuda和cundnn"><span class="nav-number">4.</span> <span class="nav-text">安装cuda和cundnn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CUDA9-0安装"><span class="nav-number">4.1.</span> <span class="nav-text">CUDA9.0安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cudnn安装"><span class="nav-number">4.2.</span> <span class="nav-text">cudnn安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
