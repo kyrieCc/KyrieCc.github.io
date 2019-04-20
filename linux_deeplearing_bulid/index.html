@@ -51,21 +51,21 @@
 
 
 
-<meta name="description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动1.nouveau驱">
+<meta name="description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="kyrie Cc">
 <meta property="og:url" content="http://yoursite.com/linux_deeplearing_bulid/index.html">
 <meta property="og:site_name" content="kyrie Cc">
-<meta property="og:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动1.nouveau驱">
+<meta property="og:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/图片1.png">
 <meta property="og:image" content="c:/Users/Administrator/Desktop/图片2.png">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1555753110558.png">
 <meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/1555753213774.png">
-<meta property="og:updated_time" content="2019-04-20T12:16:13.399Z">
+<meta property="og:updated_time" content="2019-04-20T12:40:09.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kyrie Cc">
-<meta name="twitter:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动1.nouveau驱">
+<meta name="twitter:description" content="title: ‘Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解’date: 2019-04-20 20:15:01tags: [Linux, Deep Learning] categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动">
 <meta name="twitter:image" content="c:/Users/Administrator/Desktop/图片1.png">
 
 
@@ -317,31 +317,46 @@
 <li>安装cuda和cundnn</li>
 <li>安装安装anaconda和tensorflow-gpu</li>
 </ol>
-<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a><strong>安装显卡驱动</strong></h2><p>1.nouveau驱动去除</p>
+<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a><strong>安装显卡驱动</strong></h2><ol>
+<li><p>nouveau驱动去除</p>
 <p>打开/lib/modprobe.d/dist-blacklist.conf将nvidiafb注释s掉</p>
 <p>blacklist nvidiafb,然后添加以下语句 </p>
 <p><img src="C:\Users\Administrator\Desktop\图片1.png" alt="图片1"></p>
-<p>2.重建initramfs image步骤</p>
+</li>
+<li><p>重建initramfs image步骤</p>
 <p><img src="C:\Users\Administrator\Desktop\图片2.png" alt="图片2"></p>
-<p>3.修改运行级别为文本模式</p>
+</li>
+<li><p>修改运行级别为文本模式</p>
 <p><code>systemctl set-default multi-user.target</code></p>
-<p>4.查看nouveau是否已经禁用</p>
+</li>
+<li><p>.查看nouveau是否已经禁用</p>
 <p><code>ls mod | grep nouveau</code> 如果没有显示相关内容,说明禁用成功</p>
-<p>5.修改运行级别回图形模式 <code>systemctl set-default graphical.target</code></p>
-<p>6.安装nvidia-detect命令,从ELRepo源安装</p>
+</li>
+<li><p>.修改运行级别回图形模式 <code>systemctl set-default graphical.target</code></p>
+</li>
+<li><p>安装nvidia-detect命令,从ELRepo源安装</p>
 <p>centos-7<br><code>rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</code></p>
-<p>7.安装:<code>yum install nvidia-detect</code></p>
-<p>8.检查显卡驱动信息:<code>nvidia-detect -v</code></p>
+</li>
+<li><p>安装:`yum install nvidia-detect</p>
+</li>
+<li><p>检查显卡驱动信息:`nvidia-detect -v</p>
 <p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1555753110558.png" alt="1555753110558"></p>
 <p>390.48为需安装的显卡版本号,也可以去英伟达官网,下载驱动安装,因为这个版本去yum源里面没有搜索到,我直接去英伟达官网下载cuda相应的驱动安装地址</p>
 <p><a href="https://www.nvidia.com/download/driverResults.aspx/132251/en-us" target="_blank" rel="noopener">https://www.nvidia.com/download/driverResults.aspx/132251/en-us</a></p>
-<p>9.<code>yum install -y &quot;kernel-devel-uname-r == $(uname -r)&quot;</code></p>
-<p>10.<code>yum install gcc gcc-c++ 安装gcc、g++编译器</code></p>
-<p>11.安装驱动:<code>sh NVIDIA-Linux-x86_64-384.125.run</code></p>
-<p>12.驱动安装成功后使用 <code>nvidia-smi</code>命令查看显卡信息</p>
+</li>
+<li><p><code>yum install -y &quot;kernel-devel-uname-r == $(uname -r)&quot;</code></p>
+</li>
+<li><p><code>yum install gcc gcc-c++ 安装gcc、g++编译器</code></p>
+</li>
+<li><p><code>安装驱动:</code>sh NVIDIA-Linux-x86_64-384.125.run`</p>
+</li>
+<li><p>驱动安装成功后使用 <code>nvidia-smi</code>命令查看显卡信息</p>
 <p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1555753213774.png" alt="1555753213774"></p>
-<p>13.重新启动, 使用root用户登陆</p>
-<p><code>reboot</code>                                                                                                            </p>
+</li>
+<li><p>重新启动, 使用root用户登陆</p>
+<p>reboot`  </p>
+</li>
+</ol>
 <h2 id="安装cuda和cundnn"><a href="#安装cuda和cundnn" class="headerlink" title="安装cuda和cundnn"></a><strong>安装cuda和cundnn</strong></h2><h3 id="CUDA9-0安装"><a href="#CUDA9-0安装" class="headerlink" title="CUDA9.0安装"></a><strong>CUDA9.0安装</strong></h3><ol>
 <li><p>下载</p>
 <p>对应网址：<a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
@@ -350,18 +365,17 @@
 <p><code>sh cuda_9.0.176_384.81_linux.run</code></p>
 </li>
 <li><p>安装过程中</p>
-<p>Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81？ (y)es/(n)o/(q)uit:n</p>
-<p>注意：此步选择n，其余选y或者default即可<strong>。</strong></p>
+<p>Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81？ (y)yes/(n)no/(q)quit:n</p>
+<p>注意：此步选择no，其余选yes或者default即可<strong>。</strong></p>
 </li>
 <li><p>配置环境变量</p>
 <p>在/etc/profile中添加如下：</p>
 <p><code>export CUDA_HOME=/usr/local/cuda</code></p>
-<p><code>export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="builtin-name">export</span> <span class="attribute">LD_LIBRARY_PATH</span>=<span class="variable">$CUDA_HOME</span>/lib64:$CUDA_HOME/extras/CUPTI/lib64:$LD_LIBRARY_PATH`</span><br></pre></td></tr></table></figure>
 <p><code>export PATH=$CUDA_HOME/bin:$PATH</code></p>
 </li>
 <li><p>环境变量生效</p>
-<p><code>source /etc/profile</code></p>
-<p><code>ldconfig -v</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br><span class="line">   </span><br><span class="line">   ldconfig -v</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="cudnn安装"><a href="#cudnn安装" class="headerlink" title="cudnn安装"></a><strong>cudnn安装</strong></h3><ol>
@@ -369,15 +383,9 @@
 <p>对应网址：<a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
 </li>
 <li><p>解压</p>
-<p><code>tar -zxvf cudnn-9.0-linux-x64-v7.1.tgz</code></p>
-<p><code>cp ./cuda/include/cudnn.h /usr/local/cuda/include</code></p>
-<p><code>cp ./cuda/lib64/libcudnn.so.7.4.1 /usr/local/cuda/lib64</code></p>
-<p><code>cp ./cuda/lib64/libcudnn_static.a /usr/local/cuda/lib64</code></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cudnn<span class="number">-9.0</span>-linux-x64-v7<span class="number">.1</span>.tgz</span><br><span class="line">   </span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>include/cudnn.h <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>include</span><br><span class="line">   </span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn.so<span class="number">.7</span><span class="number">.4</span><span class="number">.1</span> <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br><span class="line">   </span><br><span class="line">cp .<span class="meta-keyword">/cuda/</span>lib64/libcudnn_static.a <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/cuda/</span>lib64</span><br></pre></td></tr></table></figure>
 <p>然后进入<code>cd /usr/local/cuda/lib64</code></p>
-<p><code>ln -s libcudnn.so.7.4.1 libcudnn.so.7</code></p>
-<ol>
-<li><code>ln -s libcudnn.so.7 libcudnn.so</code></li>
-</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span><span class="selector-class">.4</span><span class="selector-class">.1</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ln</span> <span class="selector-tag">-s</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span><span class="selector-class">.7</span> <span class="selector-tag">libcudnn</span><span class="selector-class">.so</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><strong>安装anaconda和tensorflow-gpu</strong></p>
@@ -392,18 +400,13 @@
 <p>此时Anaconda并未安装完成，若在终端输入python将会发现依然是Centos自带的python版本，这是因为.bashrc的更新还没有生效，执行<code>source ~/.bashrc</code>命令使其生效即可</p>
 </li>
 <li><p>：安装tensorflow-gpu(1.8)</p>
-<p><code>conda create -n tensorflow python=3.6</code></p>
-<p><code>source activate tensorflow</code></p>
-<p><code>conda install tensorflow-gpu=1.8.0</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. conda <span class="keyword">create</span> -n tensorflow python=<span class="number">3.6</span><span class="string">`</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">   `</span><span class="keyword">source</span> <span class="keyword">activate</span> tensorflow<span class="string">`</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">      `</span>conda <span class="keyword">install</span> tensorflow-gpu=<span class="number">1.8</span><span class="number">.0</span><span class="string">`</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a><strong>测试</strong></h2><p>#启动python环境</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>#启动python环境</p>
 <p><code>python</code></p>
 <p>#验证TensorFlow是否安装成功</p>
-<p><code>import tensorflow as tf</code></p>
-<p><code>hello = tf.constant(&#39;Hello, TensorFlow!&#39;)</code></p>
-<p><code>sess = tf.Session()</code></p>
-<p><code>print(sess.run(hello))</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow <span class="keyword">as</span> <span class="keyword">tf</span></span><br><span class="line"></span><br><span class="line">hello = <span class="keyword">tf</span>.constant(<span class="string">'Hello, TensorFlow!'</span>)</span><br><span class="line"></span><br><span class="line">sess = <span class="keyword">tf</span>.Session()</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(sess.run(hello))</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
