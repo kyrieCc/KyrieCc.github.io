@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/%E6%90%AD%E5%BB%BAlinux%E7%9A%84deeplearing%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2019-04-20</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/hello-world/</loc>
+    <loc>http://yoursite.com/linux_deeplearing_bulid/</loc>
     <lastmod>2019-04-20</lastmod>
   </url>
 </urlset>
