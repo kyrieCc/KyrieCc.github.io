@@ -59,12 +59,10 @@
 <meta property="og:site_name" content="kyrie Cc">
 <meta property="og:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="c:/Users/Administrator/Desktop/图片1.png">
-<meta property="og:updated_time" content="2019-04-23T01:57:13.093Z">
+<meta property="og:updated_time" content="2019-04-23T02:59:56.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="snn-dpc详解">
 <meta name="twitter:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
-<meta name="twitter:image" content="c:/Users/Administrator/Desktop/图片1.png">
 
 
 
@@ -325,11 +323,18 @@
       
         <span itemprop="articleBody"><h1 id="Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><a href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks" class="headerlink" title="Shared-nearest-neighbor-based clustering by fast search and find of density peaks"></a>Shared-nearest-neighbor-based clustering by fast search and find of density peaks</h1><p>本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：<a href="https://www.sciencedirect.com/science/article/pii/S0020025518302093" target="_blank" rel="noopener"><a href="https://www.sciencedirect.com/science/article/pii/S0020025518302093" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/pii/S0020025518302093</a></a></p>
 <hr>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​    Rodriguez et al. presented their DPC algorithm in the journal Science in 2014. DPC is a new clustering algorithm based<br>on density and distance. This algorithm has its basis on the assumptions that cluster centers are surrounded by neighbors<br>with lower local density and that they are at a relatively larger distance from any points with a higher local density. There<br>are two important metrics to describe each data point i: its local density ρi and its distance from the nearest larger density<br>point δi</p>
-<p>​    The DPC algorithm provides two methods for calculating the local density for a data point: the cutoff distance method and the kernel distance method. For a data point i, its local density ρi is expressed in Eq. 1 with the cutoff distance method and in Eq. 2 with the kernel distance method</p>
-<p><img src="C:\Users\Administrator\Desktop\图片1.png" alt="图片1"></p>
-<p>## </p>
-</span>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​    Rodriguez等人2014年在“科学”杂志上介绍了他们的DPC算法。DPC是一种新的基于密度和距离的聚类算法。该算法基于这样的假设：聚类中心被具有较低局部密度的邻域包围，并且它们与任何高密度点的距离相对较大。有两个重要的度量指标来描述每个数据点i：它的局部密度ρi和它离最近的大密度点δi的距离。 </p>
+<p>​    DPC算法提供了两种计算数据点局部密度的方法：截断距离法和核距离法。公式如下：<br>$$<br>ρi =\sum_{i \neq j}χ(d_{ij} − d_c ),χ(x) = \left{<br>\begin{aligned}<br>1 &amp; ,&amp; x &lt; 0\<br>0 &amp; ,&amp; x ≥ 0 \<br>\end{aligned}<br>\right…..(1)<br>$$</p>
+<p>$$<br>ρi =\sum_{i \neq j}exp\left[-(\frac{d_{ij}}{d_c})^2 \right]….(2)<br>$$</p>
+<p>其中dij是数据点i和j之间的欧几里德距离。dc&gt;0，截止距离是点的邻域半径，由用户设置。</p>
+<p>DPC将δi定义公式如下所示：<br>$$<br>δi = \min_{j:ρ_j&gt;ρ<em>i}(d</em>{ij})…. (3)<br>$$<br>此外，对于具有最高ρi的点i，他的距离公式δi为：<br>$$<br>δi = \max_{i \neq j}(d_j)…. (4)<br>$$<br>同时，为了简化集群中心的选择,dpc计算每个数据点i的决策值γi。<br>$$<br>γi = ρi × δi….(5)<br>$$<br>根据DPC原著可知，DPC聚类过程分为两个步骤：寻找密度峰，即聚类中心，并将剩余的点分配给相应的聚类。</p>
+<h2 id="缺陷："><a href="#缺陷：" class="headerlink" title="缺陷："></a>缺陷：</h2><p>虽然用dpc进行的实验结果表明，它在许多情况下都能取得很好的效果，但以下的缺点是显而易见的。</p>
+<ol>
+<li>首先，局部密度和距离测量的定义过于简单因此，DPC算法可能在具有多尺度、交叉缠绕不同密度或高维数的复杂数据集上表现较差</li>
+<li>其次，一步分配策略鲁棒性差，容错性差。因此，如果一个点分配不正确，那么随后的分配将进一步放大错误，<br>导致更多的错误，这将对聚类结果产生严重的负面影响。</li>
+<li>最后，截止距离dc通常很难确定，因为在大多数情况下，每个属性的范围都是未知的。</li>
+</ol>
+<h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2></span>
       
     </div>
 
@@ -511,7 +516,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><span class="nav-number">1.</span> <span class="nav-text">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.1.</span> <span class="nav-text">前言：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><span class="nav-number">1.</span> <span class="nav-text">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷："><span class="nav-number">1.2.</span> <span class="nav-text">缺陷：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进："><span class="nav-number">1.3.</span> <span class="nav-text">改进：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
