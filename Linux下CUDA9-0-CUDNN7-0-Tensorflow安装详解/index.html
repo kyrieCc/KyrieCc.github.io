@@ -63,7 +63,7 @@
 <meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/图片2.png">
 <meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/图片3.png">
 <meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/图片4.png">
-<meta property="og:updated_time" content="2019-04-23T04:26:25.669Z">
+<meta property="og:updated_time" content="2019-04-23T04:28:15.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解">
 <meta name="twitter:description" content="categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除 打开/lib/modprobe.d/dist-blacklist.conf将nvidiafb注释s掉 #blacklist nvidiafb,然后添加以下语句    重建initramfs image步骤">
@@ -420,8 +420,9 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow <span class="attribute">python</span>=3.6</span><br><span class="line"></span><br><span class="line">source activate tensorflow</span><br><span class="line"></span><br><span class="line">conda install <span class="attribute">tensorflow-gpu</span>=1.8.0</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h1 id="启动python环境"><a href="#启动python环境" class="headerlink" title="启动python环境"></a>启动python环境</h1><p><code>python</code></p>
-<p>#验证TensorFlow是否安装成功</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>启动python环境</p>
+<p><code>python</code></p>
+<p>验证TensorFlow是否安装成功</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow <span class="keyword">as</span> <span class="keyword">tf</span></span><br><span class="line"></span><br><span class="line">hello = <span class="keyword">tf</span>.constant(<span class="string">'Hello, TensorFlow!'</span>)</span><br><span class="line"></span><br><span class="line">sess = <span class="keyword">tf</span>.Session()</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(sess.run(hello))</span><br></pre></td></tr></table></figure>
 </span>
       
@@ -543,7 +544,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -607,7 +608,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Linux"><span class="nav-number">1.</span> <span class="nav-text">categories:  Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装显卡驱动"><span class="nav-number">2.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装cuda和cundnn"><span class="nav-number">3.</span> <span class="nav-text">安装cuda和cundnn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CUDA9-0安装"><span class="nav-number">3.1.</span> <span class="nav-text">CUDA9.0安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cudnn安装"><span class="nav-number">3.2.</span> <span class="nav-text">cudnn安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#启动python环境"><span class="nav-number"></span> <span class="nav-text">启动python环境</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-Linux"><span class="nav-number">1.</span> <span class="nav-text">categories:  Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装显卡驱动"><span class="nav-number">2.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装cuda和cundnn"><span class="nav-number">3.</span> <span class="nav-text">安装cuda和cundnn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CUDA9-0安装"><span class="nav-number">3.1.</span> <span class="nav-text">CUDA9.0安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cudnn安装"><span class="nav-number">3.2.</span> <span class="nav-text">cudnn安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
