@@ -59,15 +59,15 @@
 <meta property="og:site_name" content="kyrie Cc">
 <meta property="og:description" content="categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除 打开/lib/modprobe.d/dist-blacklist.conf将nvidiafb注释s掉 #blacklist nvidiafb,然后添加以下语句  \Blog\blog\source\图片1.p">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="e:/Program%20Files%20(x86">
-<meta property="og:image" content="e:/Program%20Files%20(x86">
-<meta property="og:image" content="e:/Program%20Files%20(x86">
-<meta property="og:image" content="e:/Program%20Files%20(x86">
+<meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program%20Files%20(x86">
+<meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program%20Files%20(x86">
+<meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program%20Files%20(x86">
+<meta property="og:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program%20Files%20(x86">
 <meta property="og:updated_time" content="2019-04-21T05:02:02.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下CUDA9.0+CUDNN7.0+Tensorflow1.8.0安装详解">
 <meta name="twitter:description" content="categories:  Linux全文分为三个部分：  安装显卡驱动 安装cuda和cundnn 安装anaconda和tensorflow-gpu  安装显卡驱动 nouveau驱动去除 打开/lib/modprobe.d/dist-blacklist.conf将nvidiafb注释s掉 #blacklist nvidiafb,然后添加以下语句  \Blog\blog\source\图片1.p">
-<meta name="twitter:image" content="e:/Program%20Files%20(x86">
+<meta name="twitter:image" content="http://yoursite.com/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program%20Files%20(x86">
 
 
 
@@ -321,10 +321,10 @@
 <li><p>nouveau驱动去除</p>
 <p>打开/lib/modprobe.d/dist-blacklist.conf将nvidiafb注释s掉</p>
 <p><code>#blacklist nvidiafb</code>,然后添加以下语句 </p>
-<p><img src="E:\Program Files (x86" alt>\Blog\blog\source\图片1.png)</p>
+<p><img src="/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program Files (x86" alt>\Blog\blog\source\图片1.png)</p>
 </li>
 <li><p>重建initramfs image步骤</p>
-<p><img src="E:\Program Files (x86" alt>\Blog\blog\source\图片2.png)</p>
+<p><img src="/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program Files (x86" alt>\Blog\blog\source\图片2.png)</p>
 </li>
 <li><p>修改运行级别为文本模式</p>
 <p><code>systemctl set-default multi-user.target</code></p>
@@ -341,7 +341,7 @@
 <li><p>安装: <code>yum install nvidia-detect</code></p>
 </li>
 <li><p>检查显卡驱动信息: <code>nvidia-detect -v</code></p>
-<p><img src="E:\Program Files (x86" alt>\Blog\blog\source\图片3.png)</p>
+<p><img src="/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program Files (x86" alt>\Blog\blog\source\图片3.png)</p>
 <p>390.48为需安装的显卡版本号,也可以去英伟达官网,下载驱动安装,因为这个版本去yum源里面没有搜索到,我直接去英伟达官网下载cuda相应的驱动安装地址</p>
 <p><a href="https://www.nvidia.com/download/driverResults.aspx/132251/en-us" target="_blank" rel="noopener">https://www.nvidia.com/download/driverResults.aspx/132251/en-us</a></p>
 </li>
@@ -352,7 +352,7 @@
 <li><p>安装驱动:<code>sh NVIDIA-Linux-x86_64-384.125.run</code></p>
 </li>
 <li><p>驱动安装成功后使用 <code>nvidia-smi</code>命令查看显卡信息</p>
-<p><img src="E:\Program Files (x86" alt>\Blog\blog\source\图片4.png)</p>
+<p><img src="/Linux下CUDA9-0-CUDNN7-0-Tensorflow1-8-0安装详解/E:/Program Files (x86" alt>\Blog\blog\source\图片4.png)</p>
 </li>
 <li><p>重新启动, 使用root用户登陆</p>
 <p><code>reboot</code></p>
