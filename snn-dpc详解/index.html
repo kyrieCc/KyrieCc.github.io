@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="kyrie Cc">
 <meta property="og:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-23T03:12:33.227Z">
+<meta property="og:updated_time" content="2019-04-24T15:10:13.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="snn-dpc详解">
 <meta name="twitter:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
@@ -346,7 +346,19 @@
 <li>其次，一步分配策略鲁棒性差，容错性差。因此，如果一个点分配不正确，那么随后的分配将进一步放大错误，<br>导致更多的错误，这将对聚类结果产生严重的负面影响。</li>
 <li>最后，截止距离dc通常很难确定，因为在大多数情况下，每个属性的范围都是未知的。</li>
 </ol>
-<h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2></span>
+<h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2><ul>
+<li><p>定义了基于共享邻居的相似度和密度</p>
+</li>
+<li><p>优化了密度峰值发现算法和点分配算法</p>
+</li>
+</ul>
+<h3 id="第一个改进点："><a href="#第一个改进点：" class="headerlink" title="第一个改进点："></a>第一个改进点：</h3><p>​    由于DPC算法直接计算点间的距离和密度，而不关注周围环境，所以DPC算法在某些复杂数据集上可能不会产生满意的结果。然而，点的大多数邻居通常属于同一个簇，这一事实可以用来定义一种更合适的邻近度测量方法。</p>
+<p>(Shared Nearest Neighbor):</p>
+<p>​    点i和点j的共享邻居是它们的公共邻居集。</p>
+<script type="math/tex; mode=display">
+SNN(i, j) = (i) ∩ (j)</script><p>(SNN Similarity)：</p>
+<p>未完待续….</p>
+</span>
       
     </div>
 
@@ -528,7 +540,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><span class="nav-number">1.</span> <span class="nav-text">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷："><span class="nav-number">1.2.</span> <span class="nav-text">缺陷：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进："><span class="nav-number">1.3.</span> <span class="nav-text">改进：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><span class="nav-number">1.</span> <span class="nav-text">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷："><span class="nav-number">1.2.</span> <span class="nav-text">缺陷：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进："><span class="nav-number">1.3.</span> <span class="nav-text">改进：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个改进点："><span class="nav-number">1.3.1.</span> <span class="nav-text">第一个改进点：</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
