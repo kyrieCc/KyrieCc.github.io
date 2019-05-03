@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="论文,">
+  <meta name="keywords" content="hash map,">
 
 
 
@@ -51,18 +51,20 @@
 
 
 
-<meta name="description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
-<meta name="keywords" content="论文">
+<meta name="description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
+<meta name="keywords" content="hash map">
 <meta property="og:type" content="article">
-<meta property="og:title" content="snn-dpc详解">
-<meta property="og:url" content="http://yoursite.com/snn-dpc详解/index.html">
+<meta property="og:title" content="Island Perimeter">
+<meta property="og:url" content="http://yoursite.com/Island-Perimeter/index.html">
 <meta property="og:site_name" content="kyrie Cc">
-<meta property="og:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
+<meta property="og:description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-27T08:21:17.912Z">
+<meta property="og:image" content="http://yoursite.com/Island-Perimeter/island.png">
+<meta property="og:updated_time" content="2019-05-03T08:28:25.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="snn-dpc详解">
-<meta name="twitter:description" content="Shared-nearest-neighbor-based clustering by fast search and find of density peaks本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：https://www.sciencedirect.com/science/article/pii/S0020025518302093  前言：​    Rodrig">
+<meta name="twitter:title" content="Island Perimeter">
+<meta name="twitter:description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
+<meta name="twitter:image" content="http://yoursite.com/Island-Perimeter/island.png">
 
 
 
@@ -74,7 +76,7 @@
   };
 </script>
 
-  <title> snn-dpc详解 | kyrie Cc </title>
+  <title> Island Perimeter | kyrie Cc </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -259,7 +261,7 @@
             
             
               
-                snn-dpc详解
+                Island Perimeter
               
             
           </h1>
@@ -268,8 +270,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2019-04-22T19:02:16+08:00" content="2019-04-22">
-              2019-04-22
+            <time itemprop="dateCreated" datetime="2019-05-03T16:10:18+08:00" content="2019-05-03">
+              2019-05-03
             </time>
           </span>
 
@@ -278,8 +280,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/论文/" itemprop="url" rel="index">
-                    <span itemprop="name">论文</span>
+                  <a href="/categories/leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode</span>
                   </a>
                 </span>
 
@@ -294,8 +296,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/snn-dpc详解/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="snn-dpc详解/" itemprop="commentsCount"></span>
+              <a href="/Island-Perimeter/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Island-Perimeter/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -305,7 +307,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/snn-dpc详解/" class="leancloud_visitors" data-flag-title="snn-dpc详解">
+			 <span id="/Island-Perimeter/" class="leancloud_visitors" data-flag-title="Island Perimeter">
              &nbsp;Views
             </span>
 		  
@@ -321,96 +323,20 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><a href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks" class="headerlink" title="Shared-nearest-neighbor-based clustering by fast search and find of density peaks"></a>Shared-nearest-neighbor-based clustering by fast search and find of density peaks</h1><p>本人硕士论文是基于DPC算法的优化，所以记录以下研究历程。这篇原文出自：<a href="https://www.sciencedirect.com/science/article/pii/S0020025518302093" target="_blank" rel="noopener"><a href="https://www.sciencedirect.com/science/article/pii/S0020025518302093" target="_blank" rel="noopener">https://www.sciencedirect.com/science/article/pii/S0020025518302093</a></a></p>
-<hr>
-<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>​    Rodriguez等人2014年在“科学”杂志上介绍了他们的DPC算法。DPC是一种新的基于密度和距离的聚类算法。该算法基于这样的假设：聚类中心被具有较低局部密度的邻域包围，并且它们与任何高密度点的距离相对较大。有两个重要的度量指标来描述每个数据点i：它的局部密度ρi和它离最近的大密度点δi的距离。 </p>
-<p>​    DPC算法提供了两种计算数据点局部密度的方法：截断距离法和核距离法。公式如下：</p>
-<script type="math/tex; mode=display">
-ρi =\sum_{i \neq j}χ(d_{ij} − d_c ),χ(x) = \left\{
-\begin{aligned}
-1 & ,& x < 0\\
-0 & ,& x ≥ 0 \\
-\end{aligned}
-\right.....(1)</script><script type="math/tex; mode=display">
-ρi =\sum_{i \neq j}exp\left[-(\frac{d_{ij}}{d_c})^2 \right]....(2)</script><p>其中dij是数据点i和j之间的欧几里德距离。dc&gt;0，截止距离是点的邻域半径，由用户设置。</p>
-<p>DPC将δi定义公式如下所示：</p>
-<script type="math/tex; mode=display">
-δi = \min_{j:ρ_j>ρ_i}(d_{ij}).... (3)</script><p>此外，对于具有最高ρi的点i，他的距离公式δi为：</p>
-<script type="math/tex; mode=display">
-δi = \max_{i \neq j}(d_j).... (4)</script><p>同时，为了简化集群中心的选择,dpc计算每个数据点i的决策值γi。</p>
-<script type="math/tex; mode=display">
-γi = ρi × δi....(5)</script><p>根据DPC原著可知，DPC聚类过程分为两个步骤：寻找密度峰，即聚类中心，并将剩余的点分配给相应的聚类。</p>
-<h2 id="缺陷："><a href="#缺陷：" class="headerlink" title="缺陷："></a>缺陷：</h2><p>虽然用dpc进行的实验结果表明，它在许多情况下都能取得很好的效果，但以下的缺点是显而易见的。</p>
-<ol>
-<li>首先，局部密度和距离测量的定义过于简单因此，DPC算法可能在具有多尺度、交叉缠绕不同密度或高维数的复杂数据集上表现较差</li>
-<li>其次，一步分配策略鲁棒性差，容错性差。因此，如果一个点分配不正确，那么随后的分配将进一步放大错误，<br>导致更多的错误，这将对聚类结果产生严重的负面影响。</li>
-<li>最后，截止距离dc通常很难确定，因为在大多数情况下，每个属性的范围都是未知的。</li>
-</ol>
-<h2 id="改进："><a href="#改进：" class="headerlink" title="改进："></a>改进：</h2><ul>
-<li>基于共享邻居重新定义了相似度和密度</li>
-<li>优化了密度峰值发现算法和点分配算法</li>
-</ul>
-<h3 id="第一个改进点："><a href="#第一个改进点：" class="headerlink" title="第一个改进点："></a>第一个改进点：</h3><p>​    由于DPC算法直接计算点间的距离和密度，而不关注周围环境，所以DPC算法在某些复杂数据集上可能不会产生满意的结果。然而，点的大多数邻居通常属于同一个簇，这一事实可以用来定义一种更合适的邻近度测量方法。</p>
-<p><strong>(Shared Nearest Neighbor):</strong></p>
-<ul>
-<li>点i和点j的共享邻居是它们的公共邻居集。（若两点之间有更多的公共邻居，则认为更相似。）</li>
-</ul>
-<script type="math/tex; mode=display">
-SNN(i, j) = \Gamma(i) ∩ \Gamma(j)....(6)</script><ul>
-<li>根据上述基本思想，给出了SNN相似度的计算公式</li>
-</ul>
-<script type="math/tex; mode=display">
-Sim(i, j)  = \left\{
-\begin{aligned}
-\frac{|SNN(i,j)|^2}{\sum_{p \epsilon SNN}(d_{ip}+d_{jp})}&,if&{i,j}\epsilon SNN(i,j)\\
-0& ,& otherwise \\
-\end{aligned}
-\right.....(7)</script><ul>
-<li><p>(SNN Local Density)将点i的局部密度定义为与点i相似程度最高的k点的相似度之和</p>
-<script type="math/tex; mode=display">
-ρi = \sum_{j∈L(i)}
-Sim(i, j)....(8)</script><blockquote>
-<p><strong>The local density ρi of point i has the following properties</strong></p>
+        <span itemprop="articleBody"><h3 id="Island-Perimeter"><a href="#Island-Perimeter" class="headerlink" title="Island Perimeter"></a>Island Perimeter</h3><blockquote>
+<p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.</p>
+<p>Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).</p>
+<p>The island doesn’t have “lakes” (water inside that isn’t connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don’t exceed 100. Determine the perimeter of the island.</p>
+<img src="/Island-Perimeter/island.png">
+<p><strong>Example:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> [[0,1,0,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [1,1,1,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [0,1,0,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [1,1,0,0]]</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> Answer: 16</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
-</li>
-</ul>
+<p>&gt;</p>
 <blockquote>
-<ol>
-<li>When k is small, the number of shared neighbors between point i and one of its neighbors j is smaller, and the distance from point j to point i is closer; thus, k reflects the neighborhood and local density within a smaller neighborhood of i. In contrast, when k is large, it reflects a larger neighborhood of i. Since the distance between points in a low-density cluster is large, changes in k will have a greater impact on low-density clusters</li>
-<li>When |SNN(i, j)| is constant, if the distance from i and j to each of their shared neighbors is small, that is,P_{∈SNN(i,j)}(dip + djp) is small, then ρi is larger. In other words, if the distance between i and j is small and the distance from each shared neighbor point to i and j is also small, then the density of point i is large. It can be observed that closer points in space contribute more to ρi</li>
-<li>When p∈SNN(i,j)(dip + djp) is constant, if the number of shared neighbors is large between i and j, that is, |SNN(i, j)| is large, then ρi is larger. In other words, if most points around i are of the same cluster, then the density of i is larger. It is clear that points belonging to the same clustercontribute more to ρi</li>
-</ol>
+<p>这道题给了我们一个格子图，若干连在一起的格子形成了一个小岛，规定了图中只有一个相连的岛，且岛中没有湖，让我们求岛的周长。我们知道一个格子有四条边，但是当两个格子相邻，周围为6，若某个格子四周都有格子，那么这个格子一条边都不算在周长里</p>
 </blockquote>
-<p><strong>Distance from Nearest Larger Density Point</strong></p>
-<script type="math/tex; mode=display">
-δi = \min_{j:ρj>ρi}[dij(\sum_{x∈\Gamma(i)}d_{ip}+\sum_{x∈\Gamma(i)}d_{ip})]....(9)</script><p>具有最高局部密度的点的δ值是其他点中最大的δ值。</p>
-<script type="math/tex; mode=display">
-δi = \max_{j∈(X−i)}
-(δ_j)....(10)</script><p><strong>The δ value has the following properties</strong></p>
-<p>从较大密度点δ的距离不仅决定距离因子，而且考虑到每个点的邻域信息，从而补偿低密度点中的点。</p>
-<blockquote>
-<ol>
-<li><p>When k increases, the number of nearest neighbors between i and j will increase, and the distances from i and j to their neighbors will also increase, ultimately causing an increase in dij(p∈(i) dip + q∈(j) djq ). However, the effect of the increase varies; for clusters of low density, it is notable, whereas for clusters of high density, the impact is much more slight.</p>
-</li>
-<li><p>When dij is constant, if the distance from i and j to their respective k neighbors is large, then the value of dij(p∈(i) dip + q∈(j) djq ) is larger; then, the δi value of the candidate is larger. In other words, if the neighbors of i and j are far from them, there will be a higher compensation for the low density and vice versa. In this way, the center of the low-density cluster is more easily found from the decision graph.</p>
-</li>
-<li><p>When  p∈(i) dip + q∈(j) djq is constant, if the distance between the points i and j is large, then dij(p∈(i) dip + q∈(j) djq ) is larger; thus, the candidate δi value is larger. This is based on the assumption that the “distance between cluster centers is relatively large” in traditional DPC. In other words, if a point is close to the nearest larger density point,then the point has a low probability of being a cluster center.</p>
-</li>
-</ol>
-</blockquote>
-<h3 id="第二个改进点："><a href="#第二个改进点：" class="headerlink" title="第二个改进点："></a>第二个改进点：</h3><ul>
-<li>SNN-dpc算法引用了“不可避免的从属点”和“可能的从属点”</li>
-</ul>
-<p><strong>必然从属点:</strong> 假设A点已被分配给一个集群，而B点尚未被分配；那么，B是A的必然从属点当且仅当它满足</p>
-<script type="math/tex; mode=display">
-|\{p|p ∈ (A) ∩ p ∈ (B)\}| ≥ k/2 ....(10)</script><p>Specifically:</p>
-<script type="math/tex; mode=display">
-|SNN(A, B)| ≥ k/2....(11)</script><p>换句话说，如果点A和B被认为属于同一个集群，则它们各自的k邻域中至少有一半是与两者共享的。</p>
-<p><strong>可能从属点:</strong> 假设A点已被分配给一个集群，而B点尚未被分配；那么，B是A的一个可能的从属点当且仅当它满足</p>
-<script type="math/tex; mode=display">
-0 < |\{p|p ∈ (A) ∩ p ∈ (B)\}| < k/2 ....(12)</script><p>Specifically:</p>
-<script type="math/tex; mode=display">
-0 < |SNN(A, B)| < k/2....(13)</script><p>在非极端情况下，必然从属点一定属于一个簇，可能从属点可能属于两个簇。极端情况下，必然从属点也可能属于两个簇。</p>
+<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>每一个为1的点，看它的上下左右是否也为1，若为1则有一边重复，最后加的时候要减去重复的边。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def islandPerimeter(self, grid):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type grid: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        <span class="attribute">recount</span>=0</span><br><span class="line">        <span class="attribute">sum</span>=0</span><br><span class="line">        <span class="attribute">n</span>=len(grid)</span><br><span class="line">        <span class="attribute">m</span>=len(grid[0])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(grid)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(grid[i])):</span><br><span class="line">                <span class="keyword">if</span> grid[i][j]==1:</span><br><span class="line">                    <span class="attribute">sum</span>=sum+1</span><br><span class="line">                    <span class="keyword">if</span> i-1&gt;=0:</span><br><span class="line">                        <span class="keyword">if</span> grid[i-1][j]==1 :recount+=1</span><br><span class="line">                    <span class="keyword">if</span> j - 1 &gt;= 0:</span><br><span class="line">                        <span class="keyword">if</span> grid[i][j-1] == 1: recount+= 1</span><br><span class="line">                    <span class="keyword">if</span> i + 1 &lt; n:</span><br><span class="line">                        <span class="keyword">if</span> grid[i + 1][j] == 1: recount += 1</span><br><span class="line">                    <span class="keyword">if</span> j+1 &lt; m:</span><br><span class="line">                        <span class="keyword">if</span> grid[i][1+j] == 1: recount+=1</span><br><span class="line">            #<span class="builtin-name">print</span>(recount)</span><br><span class="line">        #<span class="builtin-name">print</span>(sum,recount)</span><br><span class="line">        return sum<span class="number">*4</span>-recount</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="attribute">s</span>=Solution()</span><br><span class="line"><span class="builtin-name">print</span>(s.islandPerimeter([[0,1,0,0],[1,1,1,0], [0,1,0,0], [1,1,0,0]]))</span><br><span class="line">————————————————————————————————————————————————————————————————————————————————————</span><br><span class="line">Answer: 16</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -419,7 +345,7 @@ Sim(i, j)....(8)</script><blockquote>
       
         <div class="post-tags">
           
-            <a href="/tags/论文/" rel="tag">#论文</a>
+            <a href="/tags/hash-map/" rel="tag">#hash map</a>
           
         </div>
       
@@ -428,13 +354,13 @@ Sim(i, j)....(8)</script><blockquote>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/" rel="next" title="Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解">
+                <i class="fa fa-chevron-left"></i> Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/" rel="prev" title="Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解">
-                Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,7 +519,7 @@ Sim(i, j)....(8)</script><blockquote>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shared-nearest-neighbor-based-clustering-by-fast-search-and-find-of-density-peaks"><span class="nav-number">1.</span> <span class="nav-text">Shared-nearest-neighbor-based clustering by fast search and find of density peaks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺陷："><span class="nav-number">1.2.</span> <span class="nav-text">缺陷：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进："><span class="nav-number">1.3.</span> <span class="nav-text">改进：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个改进点："><span class="nav-number">1.3.1.</span> <span class="nav-text">第一个改进点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二个改进点："><span class="nav-number">1.3.2.</span> <span class="nav-text">第二个改进点：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Island-Perimeter"><span class="nav-number">1.</span> <span class="nav-text">Island Perimeter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路："><span class="nav-number">2.</span> <span class="nav-text">解题思路：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -659,9 +585,9 @@ Sim(i, j)....(8)</script><blockquote>
 
     <script type="text/javascript">
       var disqus_shortname = 'kyrieCc';
-      var disqus_identifier = 'snn-dpc详解/';
-      var disqus_title = 'snn-dpc详解';
-      var disqus_url = 'http://yoursite.com/snn-dpc详解/';
+      var disqus_identifier = 'Island-Perimeter/';
+      var disqus_title = 'Island Perimeter';
+      var disqus_url = 'http://yoursite.com/Island-Perimeter/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
