@@ -60,7 +60,12 @@
 <meta property="og:description" content="搜狐车型库爬取 机缘巧合，刚好同学有这个需求，就尝试着去做，结果成功了。(本人小白，此博仅记录成长经验) 实验整体参考https://blog.csdn.net/nodoself/article/details/81328088  需求：要如下图所示所有车辆的参数：  实验过程：参考 nodoself的实验过程 开发工具：sublime text3+chrome+python3+requests+">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/Spider/参数.JPG">
-<meta property="og:updated_time" content="2019-05-10T16:18:30.267Z">
+<meta property="og:image" content="http://yoursite.com/Spider/数据2.JPG">
+<meta property="og:image" content="http://yoursite.com/Spider/数据1.JPG">
+<meta property="og:image" content="http://yoursite.com/Spider/数据3.JPG">
+<meta property="og:image" content="http://yoursite.com/Spider/数据4.JPG">
+<meta property="og:image" content="http://yoursite.com/Spider/数据5.JPG">
+<meta property="og:updated_time" content="2019-05-10T16:25:43.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搜狐车型库爬取">
 <meta name="twitter:description" content="搜狐车型库爬取 机缘巧合，刚好同学有这个需求，就尝试着去做，结果成功了。(本人小白，此博仅记录成长经验) 实验整体参考https://blog.csdn.net/nodoself/article/details/81328088  需求：要如下图所示所有车辆的参数：  实验过程：参考 nodoself的实验过程 开发工具：sublime text3+chrome+python3+requests+">
@@ -339,14 +344,14 @@
 <p>​    其次，作者因为怕封ID跑了一个星期才结束，可是同学急于用，就改了下随机时间，大约需要两天半就可以获取所有数据。</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(randint(<span class="number">2</span>,<span class="number">5</span>)*<span class="number">2</span>)</span><br><span class="line">改为</span><br><span class="line">time.sleep(randint(<span class="number">1</span>，<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 <p>​    之后只需要等上48个小时左右，就可以在cartest.txt得到所有数据。（盼着别断网断电死机啦…hahah）</p>
-<p>​    得到的数据是这样的：</p>
-     
+<p>​    得到的数据是这样的：(图2大概8000000条数据)</p>
+<img src="/Spider/数据2.JPG">     <img src="/Spider/数据1.JPG">
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>​    现在得到数据是一个一列多行的数据，可是一般我们需要一个多行多列的数据，可能这是把数据导入数据库更容易操作，可是本人数据库更是小白，发现电脑上连个mysql都没有，就果断放弃了。依然参考了nodoself作者的方法。</p>
 <ol>
 <li><p>首先代开一个Excel(本人用的WPS的表格，全是坑呀！！！！)</p>
 </li>
-<li><p>然后把得到的数据导入表格中 （用作者的方法没有成功，我选择一段一段的沾进去，反正一个excel表格顶多也就能存进去1400000条数据）</p>
-
+<li><p>然后把得到的数据导入表格中 （用作者的方法没有成功，我选择一段一段的沾进去，反正一个excel表格最多也就能存进去1400000条数据）</p>
+<img src="/Spider/数据3.JPG">
 </li>
 <li><p>这时就需要把一列多行的数据转成多行多列的数据了，此时选用excel表中开发工具自带的VBA</p>
 </li>
@@ -355,11 +360,11 @@
 <li><p>打开vba写个循环：</p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> transfer2()</span><br><span class="line"><span class="comment">'</span></span><br><span class="line"><span class="comment">' transfer2 Macro</span></span><br><span class="line"><span class="comment">'</span></span><br><span class="line"><span class="keyword">Dim</span> i%</span><br><span class="line"><span class="keyword">Dim</span> arr(<span class="number">1</span> <span class="keyword">To</span> <span class="number">209</span>)</span><br><span class="line">leng = Worksheets(<span class="string">"Sheet1"</span>).Range(<span class="string">"a1"</span>).<span class="keyword">End</span>(<span class="number">4</span>).Row</span><br><span class="line">len3 = Worksheets(<span class="string">"Sheet2"</span>).Range(<span class="string">"a214017"</span>).<span class="keyword">End</span>(xlUp).Row + <span class="number">1</span></span><br><span class="line">leng2 = Int(leng / <span class="number">209</span>) + len3</span><br><span class="line"><span class="keyword">For</span> i = len3 <span class="keyword">To</span> leng2</span><br><span class="line">    <span class="keyword">For</span> j = <span class="number">1</span> <span class="keyword">To</span> <span class="number">209</span></span><br><span class="line">        arr(j) = Worksheets(<span class="string">"Sheet1"</span>).Range(<span class="string">"a"</span> &amp; j)</span><br><span class="line">    <span class="keyword">Next</span> j</span><br><span class="line">    <span class="keyword">If</span> Worksheets(<span class="string">"Sheet1"</span>).Range(<span class="string">"a1"</span>) &lt;&gt; <span class="string">""</span> <span class="keyword">Then</span></span><br><span class="line">        Worksheets(<span class="string">"Sheet2"</span>).Range(<span class="string">"a"</span> &amp; i).Resize(<span class="number">1</span>, <span class="number">209</span>) = arr</span><br><span class="line">        <span class="keyword">Erase</span> arr</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    Worksheets(<span class="string">"Sheet1"</span>).Range(<span class="string">"a1"</span>, <span class="string">"a209"</span>).Delete shift:=xlUp</span><br><span class="line"><span class="keyword">Next</span> i</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line">（本小白卡在这好久呀.........）</span><br></pre></td></tr></table></figure>
 <p>如图：</p>
-
+<img src="/Spider/数据4.JPG">
 </li>
 <li><p>执行</p>
-<p>结果如下：</p>
-
+<p>结果如下：（大概40000条）</p>
+<img src="/Spider/数据5.JPG">
 </li>
 </ol>
 <blockquote>
