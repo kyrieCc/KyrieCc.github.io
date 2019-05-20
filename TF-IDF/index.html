@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="hash map,">
+  <meta name="keywords" content="语言模型,">
 
 
 
@@ -51,20 +51,18 @@
 
 
 
-<meta name="description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
-<meta name="keywords" content="hash map">
+<meta name="description" content="统词袋模型（Bag of Word, BOW):​        即不考虑词语原本在句子中的顺序，直接将每一个词语或者符号一放置在一个集合（如 list），然后按照计数的方式对出现的次数进行统计。统计词频这只是最基本的方式，TF-IDF 是词袋模型的一个经典用法。  ​    词袋模型假设我们不考虑文本中词与词之间的上下文关系，仅仅只考虑所有词的权重。而权重与词在文本中出现的频率有关。词袋模型首先">
+<meta name="keywords" content="语言模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Island Perimeter">
-<meta property="og:url" content="http://yoursite.com/Island-Perimeter/index.html">
+<meta property="og:title" content="TF-IDF">
+<meta property="og:url" content="http://yoursite.com/TF-IDF/index.html">
 <meta property="og:site_name" content="kyrie Cc">
-<meta property="og:description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
+<meta property="og:description" content="统词袋模型（Bag of Word, BOW):​        即不考虑词语原本在句子中的顺序，直接将每一个词语或者符号一放置在一个集合（如 list），然后按照计数的方式对出现的次数进行统计。统计词频这只是最基本的方式，TF-IDF 是词袋模型的一个经典用法。  ​    词袋模型假设我们不考虑文本中词与词之间的上下文关系，仅仅只考虑所有词的权重。而权重与词在文本中出现的频率有关。词袋模型首先">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/Island-Perimeter/island.png">
-<meta property="og:updated_time" content="2019-05-03T08:28:25.431Z">
+<meta property="og:updated_time" content="2019-05-20T08:29:30.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Island Perimeter">
-<meta name="twitter:description" content="Island Perimeter You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The gr">
-<meta name="twitter:image" content="http://yoursite.com/Island-Perimeter/island.png">
+<meta name="twitter:title" content="TF-IDF">
+<meta name="twitter:description" content="统词袋模型（Bag of Word, BOW):​        即不考虑词语原本在句子中的顺序，直接将每一个词语或者符号一放置在一个集合（如 list），然后按照计数的方式对出现的次数进行统计。统计词频这只是最基本的方式，TF-IDF 是词袋模型的一个经典用法。  ​    词袋模型假设我们不考虑文本中词与词之间的上下文关系，仅仅只考虑所有词的权重。而权重与词在文本中出现的频率有关。词袋模型首先">
 
 
 
@@ -76,7 +74,7 @@
   };
 </script>
 
-  <title> Island Perimeter | kyrie Cc </title>
+  <title> TF-IDF | kyrie Cc </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -261,7 +259,7 @@
             
             
               
-                Island Perimeter
+                TF-IDF
               
             
           </h1>
@@ -270,8 +268,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2019-05-03T16:10:18+08:00" content="2019-05-03">
-              2019-05-03
+            <time itemprop="dateCreated" datetime="2019-05-20T16:27:48+08:00" content="2019-05-20">
+              2019-05-20
             </time>
           </span>
 
@@ -280,8 +278,8 @@
               &nbsp; | &nbsp; In
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
+                  <a href="/categories/NLP/" itemprop="url" rel="index">
+                    <span itemprop="name">NLP</span>
                   </a>
                 </span>
 
@@ -296,8 +294,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/Island-Perimeter/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Island-Perimeter/" itemprop="commentsCount"></span>
+              <a href="/TF-IDF/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="TF-IDF/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -307,7 +305,7 @@
 		  
 		  
 			 &nbsp; | &nbsp;
-			 <span id="/Island-Perimeter/" class="leancloud_visitors" data-flag-title="Island Perimeter">
+			 <span id="/TF-IDF/" class="leancloud_visitors" data-flag-title="TF-IDF">
              &nbsp;Views
             </span>
 		  
@@ -323,20 +321,34 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="Island-Perimeter"><a href="#Island-Perimeter" class="headerlink" title="Island Perimeter"></a>Island Perimeter</h3><blockquote>
-<p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.</p>
-<p>Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).</p>
-<p>The island doesn’t have “lakes” (water inside that isn’t connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don’t exceed 100. Determine the perimeter of the island.</p>
-<img src="/Island-Perimeter/island.png">
-<p><strong>Example:</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> [[0,1,0,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [1,1,1,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [0,1,0,0],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">  [1,1,0,0]]</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> Answer: 16</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><h4 id="统词袋模型（Bag-of-Word-BOW"><a href="#统词袋模型（Bag-of-Word-BOW" class="headerlink" title="统词袋模型（Bag of Word, BOW):"></a><strong>统词袋模型（Bag of Word, BOW):</strong></h4><p>​        即不考虑词语原本在句子中的顺序，直接将每一个词语或者符号一放置在一个集合（如 list），然后按照计数的方式对出现的次数进行统计。统计词频这只是最基本的方式，TF-IDF 是词袋模型的一个经典用法。</p>
+<blockquote>
+<p>​    词袋模型假设我们不考虑文本中词与词之间的上下文关系，仅仅只考虑所有词的权重。而权重与词在文本中出现的频率有关。词袋模型首先会进行分词，在分词之后，通过统计每个词在文本中出现的次数，我们就可以得到该文本基于词的特征，如果将各个文本样本的这些词与对应的词频放在一起，就是我们常说的向量化</p>
+</blockquote>
+<h4 id="TF-IDF处理："><a href="#TF-IDF处理：" class="headerlink" title="TF-IDF处理："></a>TF-IDF处理：</h4><blockquote>
+<p>​    <strong>为了去除the/a/an/to等高频导致权重很高的词，要使用TF-IDF技术。</strong></p>
+<p>​    TF-IDF是一种统计方法，用以评估一个字词对于一个文件集或一个语料库中的其中一份文件的重要程度。字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降。TF-IDF加权的各种形式常被搜索引擎应用，作为文件与用户查询之间相关程度的度量或评级。</p>
+<p>​    TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。TF-IDF实际上是：TF * IDF。</p>
+<p>​    （1）词频（Term Frequency，TF）指的是某一个给定的词语在该文件中出现的频率。即词w在文档d中出现的次数count(w, d)和文档d中总词数size(d)的比值。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; tf(<span class="name">w</span>,d) = count(<span class="name">w</span>, d) / size(<span class="name">d</span>)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
 <blockquote>
-<p>这道题给了我们一个格子图，若干连在一起的格子形成了一个小岛，规定了图中只有一个相连的岛，且岛中没有湖，让我们求岛的周长。我们知道一个格子有四条边，但是当两个格子相邻，周围为6，若某个格子四周都有格子，那么这个格子一条边都不算在周长里</p>
+<p>​    这个数字是对词数 (term count) 的归一化，以防止它偏向长的文件。（同一个词语在长文件里可能会比短文件有更高的词数，而不管该词语重要与否。）</p>
+<p>​    （2）逆向文件频率（Inverse Document Frequency，IDF）是一个词语普遍重要性的度量。某一特定词语的IDF，可以由总文件数目除以包含该词语之文件的数目，再将得到的商取对数得到。即文档总数n与词w所出现文件数docs(w, D)比值的对数。　</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; idf = log(<span class="name">n</span> / docs(<span class="name">w</span>, D))</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h3><p>每一个为1的点，看它的上下左右是否也为1，若为1则有一边重复，最后加的时候要减去重复的边。</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def islandPerimeter(self, grid):</span><br><span class="line">        <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">        :type grid: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        "</span><span class="string">""</span></span><br><span class="line">        <span class="attribute">recount</span>=0</span><br><span class="line">        <span class="attribute">sum</span>=0</span><br><span class="line">        <span class="attribute">n</span>=len(grid)</span><br><span class="line">        <span class="attribute">m</span>=len(grid[0])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(grid)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(len(grid[i])):</span><br><span class="line">                <span class="keyword">if</span> grid[i][j]==1:</span><br><span class="line">                    <span class="attribute">sum</span>=sum+1</span><br><span class="line">                    <span class="keyword">if</span> i-1&gt;=0:</span><br><span class="line">                        <span class="keyword">if</span> grid[i-1][j]==1 :recount+=1</span><br><span class="line">                    <span class="keyword">if</span> j - 1 &gt;= 0:</span><br><span class="line">                        <span class="keyword">if</span> grid[i][j-1] == 1: recount+= 1</span><br><span class="line">                    <span class="keyword">if</span> i + 1 &lt; n:</span><br><span class="line">                        <span class="keyword">if</span> grid[i + 1][j] == 1: recount += 1</span><br><span class="line">                    <span class="keyword">if</span> j+1 &lt; m:</span><br><span class="line">                        <span class="keyword">if</span> grid[i][1+j] == 1: recount+=1</span><br><span class="line">            #<span class="builtin-name">print</span>(recount)</span><br><span class="line">        #<span class="builtin-name">print</span>(sum,recount)</span><br><span class="line">        return sum<span class="number">*4</span>-recount</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="attribute">s</span>=Solution()</span><br><span class="line"><span class="builtin-name">print</span>(s.islandPerimeter([[0,1,0,0],[1,1,1,0], [0,1,0,0], [1,1,0,0]]))</span><br><span class="line">————————————————————————————————————————————————————————————————————————————————————</span><br><span class="line">Answer: 16</span><br></pre></td></tr></table></figure>
+<p>&gt;</p>
+<blockquote>
+<p>TF-IDF根据 tf 和 idf 为每一个文档d和由关键词w[1]…w[k]组成的查询串q计算一个权值，用于表示查询串q与文档d的匹配度：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; tf-idf(q, d) = sum &#123; <span class="built_in">i</span> = <span class="number">1.</span>.k | tf-idf(w[<span class="built_in">i</span>], d) &#125; = sum &#123; <span class="built_in">i</span> = <span class="number">1.</span>.k | tf(w[<span class="built_in">i</span>], d) * idf(w[<span class="built_in">i</span>]) &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>某一特定文件内的高词语频率，以及该词语在整个文件集合中的低文件频率，可以产生出高权重的TF-IDF。因此，TF-IDF倾向于过滤掉常见的词语，保留重要的词语。</p>
+</blockquote>
+<p><em>上述内容全部引于&lt;<a href="https://blog.csdn.net/m0_37324740/article/details/79411651" target="_blank" rel="noopener">https://blog.csdn.net/m0_37324740/article/details/79411651</a></em>&gt;</p>
+<p>ps：这是见过最好的tf-idf的解释。</p>
 </span>
       
     </div>
@@ -345,7 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hash-map/" rel="tag">#hash map</a>
+            <a href="/tags/语言模型/" rel="tag">#语言模型</a>
           
         </div>
       
@@ -354,17 +366,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Linux下CUDA9-0-CUDNN7-0-Tensorflow安装详解/" rel="next" title="Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解">
-                <i class="fa fa-chevron-left"></i> Linux下CUDA9.0+CUDNN7.0+Tensorflow安装详解
+              <a href="/textclassifier/" rel="next" title="textclassifier">
+                <i class="fa fa-chevron-left"></i> textclassifier
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Spider/" rel="prev" title="搜狐车型库爬取">
-                搜狐车型库爬取 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +531,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Island-Perimeter"><span class="nav-number">1.</span> <span class="nav-text">Island Perimeter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路："><span class="nav-number">2.</span> <span class="nav-text">解题思路：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#统词袋模型（Bag-of-Word-BOW"><span class="nav-number">1.</span> <span class="nav-text">统词袋模型（Bag of Word, BOW):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TF-IDF处理："><span class="nav-number">2.</span> <span class="nav-text">TF-IDF处理：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -589,9 +597,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'kyrieCc';
-      var disqus_identifier = 'Island-Perimeter/';
-      var disqus_title = 'Island Perimeter';
-      var disqus_url = 'http://yoursite.com/Island-Perimeter/';
+      var disqus_identifier = 'TF-IDF/';
+      var disqus_title = 'TF-IDF';
+      var disqus_url = 'http://yoursite.com/TF-IDF/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
